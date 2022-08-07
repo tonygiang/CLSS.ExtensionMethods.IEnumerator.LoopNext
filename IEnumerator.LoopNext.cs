@@ -43,7 +43,7 @@ namespace CLSS
     }
 
     /// <inheritdoc cref="LoopNextElement{T}(IEnumerator{T})"/>
-    public static object Pop(this IEnumerator enumerator)
+    public static object LoopNextElement(this IEnumerator enumerator)
     { enumerator.LoopNext(); return enumerator.Current; }
   }
 }
