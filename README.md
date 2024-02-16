@@ -4,7 +4,7 @@
 
 Looping a collection indefinitely is an operation that maps well to many use cases (such as AI behavior phases, sequentially looping slideshow, infinite scrolling background,  etc...), but since there is no native way to perform this type of loop, you have to write some non-obvious code to do so.
 
-```
+```csharp
 var numbers = new int[] { 0, 1, 2, 3 };
 int li = 0;
 foreach (int i = 0; i < 10; ++i)
@@ -20,7 +20,7 @@ foreach (int i = 0; i < 10; ++i)
 
 `LoopNext` is an extension method that infinitely advances an enumerator in a loop. The above code segment can be rewritten as follows:
 
-```
+```csharp
 using CLSS;
 
 var numbers = new int[] { 0, 1, 2, 3 };
@@ -36,7 +36,7 @@ Because `LoopNext` always returns true, the usual step of checking its result be
 
 Since it then becomes natural to call `LoopNext` and accessing `Current` back-to-back, this package also comes with a `LoopNextElement` extension method that combines these 2 actions, moving to the next element in a loop directly:
 
-```
+```csharp
 using CLSS;
 
 DoSomethingWith(numbersEnumerator.LoopNextElement());
